@@ -2,9 +2,9 @@
 
 > "Cada centavo conta" - Um rastreador de finanças pessoais simples e intuitivo.
 
-![React](https://img.shields.io/badge/React-18.3.1-61dafb?style=flat&logo=react)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.5.3-3178c6?style=flat&logo=typescript)
-![Vite](https://img.shields.io/badge/Vite-5.4.2-646cff?style=flat&logo=vite)
+![React](https://img.shields.io/badge/React-19.2.4-61dafb?style=flat&logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.9.3-3178c6?style=flat&logo=typescript)
+![Vite](https://img.shields.io/badge/Vite-7.3.1-646cff?style=flat&logo=vite)
 
 ## 📖 Sobre o Projeto
 
