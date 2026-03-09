@@ -1,0 +1,99 @@
+.listWrapper {
+  flex: 1; 
+  max-width: 500px; 
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header h3 {
+  font-size: 16px;
+  color: #374151; 
+  font-weight: 600;
+  margin: 0;
+}
+
+.counter {
+  font-size: 13px;
+  color: #9ca3af; 
+}
+
+.transacoes {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.cardLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+  background-color: #f3f4f6; 
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.info strong {
+  font-size: 14px;
+  color: #1f2937;
+  font-weight: 700;
+}
+
+.info span {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.cardRight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; 
+  gap: 4px;
+}
+
+.date {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.receita {
+  font-size: 14px;
+  color: #10b981; 
+  font-weight: 700;
+}
+
+.despesa {
+  font-size: 14px;
+  color: #ef4444; 
+  font-weight: 700;
+}

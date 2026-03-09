@@ -1,0 +1,159 @@
+.header {
+  background: linear-gradient(135deg, #004d3d 0%, #006b52 100%);
+  width: 100%;
+  height: 20vh;
+  max-height: 20vh; 
+  display: flex;
+  justify-content: center;
+  padding: 1.2rem 0;
+  box-sizing: border-box;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.branding {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  height: 3.5rem; 
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.descricao {
+  font-size: 1.1rem;
+  color: #ffffff;
+  margin: 0;
+  font-weight: 500;
+  opacity: 0.95;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.summaryGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  width: 100%;
+}
+
+.card {
+  background: white;
+  padding: 0.9rem 1.1rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.cardLabel {
+  font-size: 0.7rem;
+  color: #718096;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.cardValue {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #1a202c;
+  line-height: 1.2;
+}
+
+.icon {
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.greenIcon { 
+  background: #d1fae5; 
+  color: #047857; 
+}
+
+.redIcon { 
+  background: #fee2e2; 
+  color: #dc2626; 
+}
+
+.blueIcon { 
+  background: #dbeafe; 
+  color: #2563eb; 
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .branding {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+
+  .logo {
+    height: 2.5rem;
+  }
+
+  .descricao {
+    font-size: 0.9rem;
+  }
+
+  .summaryGrid {
+    gap: 0.6rem;
+  }
+
+  .card {
+    padding: 0.7rem 0.8rem;
+    gap: 0.6rem;
+  }
+
+  .icon {
+    width: 2.2rem;
+    height: 2.2rem;
+    font-size: 1rem;
+  }
+
+  .cardLabel {
+    font-size: 0.65rem;
+  }
+
+  .cardValue {
+    font-size: 1.1rem;
+  }
+}
+
+
