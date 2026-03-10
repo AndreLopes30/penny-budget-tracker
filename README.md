@@ -30,12 +30,10 @@ Um rastreador de orçamento pessoal que permite controlar receitas e despesas de
 
 ## 🚀 Como Rodar
 
+```bash
 git clone https://github.com/AndreLopes30/penny-budget-tracker.git
-
 cd penny-budget-tracker
-
 npm install
-
 npm run dev
 
 Acesse: http://localhost:5173
