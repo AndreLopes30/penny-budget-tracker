@@ -48,7 +48,7 @@ src/
 ├── types.ts
 ├── App.tsx
 └── main.tsx
-
+```
 ## 👤 Autor
 
 **André Ferreira**
