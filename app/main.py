@@ -2,8 +2,9 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.api.api import api_router
 from app.db.base_class import Base
-from app.db.db import engine
+from app.db.db import engine 
 import logging
+from app.models.transaction import Transaction
 
 app = FastAPI()
 
