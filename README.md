@@ -1,61 +1,72 @@
-# 💰 Penny - Budget Tracker
+💰 Penny - Budget Tracker (Full-Stack)
+"Cada centavo conta" - Um rastreador de finanças pessoais simples e intuitivo.
 
-> "Cada centavo conta" - Um rastreador de finanças pessoais simples e intuitivo.
+React
+TypeScript
+FastAPI
+Python
 
-![React](https://img.shields.io/badge/React-19.2.4-61dafb?style=flat&logo=react)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.9.3-3178c6?style=flat&logo=typescript)
-![Vite](https://img.shields.io/badge/Vite-7.3.1-646cff?style=flat&logo=vite)
+📖 Sobre o Projeto
+O Penny é uma aplicação Full-Stack de controle financeiro.
+Nascido como um projeto React, ele evoluiu para possuir uma API robusta em Python, garantindo persistência de dados, segurança e processamento em tempo real.
 
-## 📖 Sobre o Projeto
+✨ Funcionalidades
+CRUD Completo: Adicionar, listar e excluir receitas e despesas.
+Persistência de Dados: Integração com API RESTful e Banco de Dados.
+Cálculo Automático: Saldo atualizado em tempo real baseado no histórico.
+Categorização: Filtro visual rápido (Alimentação, Transporte, Lazer, etc.).
+UX/UI: Interface responsiva, tratamento de estados vazios (Empty States) e formatação automática em Real (R$).
+🛠️ Tecnologias
+Frontend
+React com TypeScript
+Vite (Build tool)
+Axios (Consumo de API)
+CSS Modules (Estilização local)
+Backend
+Python com FastAPI
+SQLAlchemy (ORM)
+Pydantic (Validação de Dados)
+🚀 Como Rodar o Projeto Localmente
+Para que o sistema funcione perfeitamente, você precisa rodar o Backend e o Frontend simultaneamente.
 
-O **Penny** é meu primeiro projeto desenvolvido com React.
+1️⃣ Rodando o Backend (API)
+Abra um terminal e execute:
 
-Um rastreador de orçamento pessoal que permite controlar receitas e despesas de forma visual e prática.
+Bash
 
-## ✨ Funcionalidades
+# Clone o repositório do backend (se estiver em outro repositório, insira o link real)
+# cd penny-api
 
-- Adicionar receitas e despesas
-- Visualizar saldo atual em tempo real
-- Categorizar transações (Alimentação, Transporte, Lazer, etc.)
-- Acompanhar histórico completo de transações
-- Interface responsiva para mobile e desktop
-- Formatação automática em Real (R$)
+# Crie seu ambiente virtual e ative-o
+python -m venv venv
+source venv/Scripts/activate # (No Windows)
 
-## 🛠️ Tecnologias
+# Instale as dependências
+pip install -r requirements.txt
 
-- **React** - Biblioteca principal
-- **TypeScript** - Tipagem estática
-- **CSS Modules** - Estilização com escopo local
-- **Vite** - Build tool
+# Rode a API
+uvicorn app.main:app --reload
+A API estará rodando em: http://localhost:8000
 
-## 🚀 Como Rodar
+2️⃣ Rodando o Frontend (React)
+Abra um NOVO terminal e execute:
 
-```bash
+Bash
+
 git clone https://github.com/AndreLopes30/penny-budget-tracker.git
 cd penny-budget-tracker
+
+# Instale as dependências
 npm install
+
+# Rode a aplicação
 npm run dev
+Acesse no navegador: http://localhost:5173
 
-Acesse: http://localhost:5173
+👤 Autor
+André Ferreira
 
-## 📂 Estrutura
-
-src/
-├── Components/
-│   ├── Header.tsx
-│   ├── Forms.tsx
-│   └── List.tsx
-├── types.ts
-├── App.tsx
-└── main.tsx
-```
-## 👤 Autor
-
-**André Ferreira**
-
-- [GitHub](https://github.com/AndreLopes30)
-- [LinkedIn](https://www.linkedin.com/in/andre-ferreira30)
-
-## 📄 Licença
-
+GitHub
+LinkedIn
+📄 Licença
 MIT
