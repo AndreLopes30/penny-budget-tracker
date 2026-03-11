@@ -7,7 +7,7 @@ import penny from './assets/Penny.png'
 import { List } from './Components/List'
 import axios from 'axios'
 
-const API_URL = "https://penny-budget-tracker.onrender.com"
+const API_URL = "https://penny-budget-tracker.onrender.com/transactions/"
 
 function App() {
     const [transacoes, setTransacoes] = useState<Transacao[]>([])
