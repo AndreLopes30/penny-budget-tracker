@@ -46,7 +46,7 @@ uvicorn app.main:app --reload
 
 A API rodará em: http://localhost:8000
 ```
-🚀 Como Rodar o Frontend (React)
+## 🚀 Como Rodar o Frontend (React)
 ```bash
 
 git clone https://github.com/AndreLopes30/penny-budget-tracker.git
@@ -56,7 +56,7 @@ npm run dev
 ```
 Acesse: http://localhost:5173
 
-📂 Estrutura (Frontend)
+## 📂 Estrutura (Frontend)
 ```bash
 src/
 ├── Components/
@@ -68,9 +68,12 @@ src/
 └── main.tsx
 ```
 👤 Autor
-André Ferreira
 
-GitHub
-LinkedIn
-📄 Licença
+**André Ferreira**
+
+- [GitHub](https://github.com/AndreLopes30)
+- [LinkedIn](https://www.linkedin.com/in/andre-ferreira30)
+
+## 📄 Licença
+
 MIT
