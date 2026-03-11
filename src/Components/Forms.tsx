@@ -14,8 +14,8 @@ export function Forms({ transacaoNova }: FormsProps) {
     const [data, setData] = useState('');
 
     function adicionarTransacao() {
-        if (!valor) {
-            alert("Preencha o valor!");
+        if (!valor || tipo === '') {
+            alert("Preencha o valor e selecione o tipo!");
             return;
         }
 
