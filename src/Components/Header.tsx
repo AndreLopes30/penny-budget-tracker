@@ -9,7 +9,7 @@ interface HeaderProps {
 }
 
 const formatarMoeda = (valor: number) => {
-  return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  return (valor / 100).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 };
 
 export function Header({ imagem, descricao, receitas, despesas, saldo }: HeaderProps) {
@@ -40,10 +40,12 @@ export function Header({ imagem, descricao, receitas, despesas, saldo }: HeaderP
           </div>
 
           <div className={styles.card}>
-            <div className={`${styles.icon} ${styles.blueIcon}`}>$</div>
+            <div className={`${styles.icon} ${saldo >= 0 ? styles.blueIcon : styles.redIcon}`}>$</div>
             <div className={styles.cardContent}>
               <span className={styles.cardLabel}>Saldo</span>
-              <strong className={styles.cardValue}>{formatarMoeda(saldo)}</strong>
+              <strong className={styles.cardValue} style={{ color: saldo < 0 ? '#e74c3c' : 'inherit' }}>
+                  {formatarMoeda(saldo)}
+              </strong>
             </div>
           </div>
         </div>

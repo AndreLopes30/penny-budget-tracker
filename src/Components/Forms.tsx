@@ -3,7 +3,7 @@ import styles from './Forms.module.css';
 import type { Transacao } from '../types';
 
 interface FormsProps {
-    transacaoNova: (transacao: Transacao) => void;
+    transacaoNova: (transacao: Omit<Transacao, 'id'>) => void;
 }
 
 export function Forms({ transacaoNova }: FormsProps) {
@@ -14,25 +14,26 @@ export function Forms({ transacaoNova }: FormsProps) {
     const [data, setData] = useState('');
 
     function adicionarTransacao() {
-        if (!nome || !valor) {
-            alert("Preencha os campos!");
+        if (!valor) {
+            alert("Preencha o valor!");
             return;
         }
 
-        const transacao: Transacao = {
-            id: Math.random(),
-            nome,
-            valor: Number(valor.replace(',', '.')),
+        const valorNumerico = Math.round(Number(valor.replace(',', '.')) * 100);
+
+        const transacao: Omit<Transacao, 'id'> = {
+            nome: nome.trim() || "Sem nome",
+            valor: valorNumerico, 
             tipo,
             categoria,
-            data: data ? new Date(data) : new Date()
+            data: data || new Date().toISOString().split('T')[0] 
         };
         
         transacaoNova(transacao);        
         setNome('');
         setValor('');
-        setTipo('Receita');
-        setCategoria('Alimentação 🍔');
+        setTipo('');
+        setCategoria('');
         setData('');
     }
 
