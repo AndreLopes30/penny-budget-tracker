@@ -1,5 +1,7 @@
 # 💰 Penny - Budget Tracker
 
+**[🟢 Acessar Aplicação Online](https://penny-budget-tracker.vercel.app/)**
+
 > "Cada centavo conta" - Um rastreador de finanças pessoais simples e intuitivo.
 
 ![React](https://img.shields.io/badge/React-19.2.4-61dafb?style=flat&logo=react)
