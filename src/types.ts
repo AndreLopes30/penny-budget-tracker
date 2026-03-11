@@ -4,5 +4,5 @@ export interface Transacao {
   nome: string;
   valor: number;
   categoria: string;
-  data: Date;
+  data: string;
 }

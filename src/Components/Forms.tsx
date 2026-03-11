@@ -9,7 +9,7 @@ interface FormsProps {
 export function Forms({ transacaoNova }: FormsProps) {
     const [nome, setNome] = useState('');
     const [valor, setValor] = useState('');
-    const [tipo, setTipo] = useState<'Receita' | 'Despesa'>('Receita');
+    const [tipo, setTipo] = useState<'Receita' | 'Despesa' | ''>('');
     const [categoria, setCategoria] = useState('Alimentação 🍔');
     const [data, setData] = useState('');
 
@@ -24,7 +24,7 @@ export function Forms({ transacaoNova }: FormsProps) {
         const transacao: Omit<Transacao, 'id'> = {
             nome: nome.trim() || "Sem nome",
             valor: valorNumerico, 
-            tipo,
+            tipo: tipo as "Receita" | "Despesa",
             categoria,
             data: data || new Date().toISOString().split('T')[0] 
         };
@@ -59,7 +59,8 @@ export function Forms({ transacaoNova }: FormsProps) {
 
                 <label>
                     Receita / Despesa
-                    <select value={tipo} onChange={(e) => setTipo(e.target.value as 'Receita' | 'Despesa')}>
+                    <select value={tipo} onChange={(e) => setTipo(e.target.value as 'Receita' | 'Despesa' | '')}>
+                        <option value="" disabled>Selecione...</option>
                         <option value="Receita">Receita 🟢</option>
                         <option value="Despesa">Despesa 🔴</option>
                     </select>
