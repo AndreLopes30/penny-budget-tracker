@@ -34,9 +34,13 @@ function App() {
         try {
             const response = await axios.post(API_URL, transacaoNova);
             setTransacoes([...transacoes, response.data]);
-        } catch (error) {
-            console.error("Erro ao salvar transação:", error);
-            alert("Não foi possível salvar no banco de dados. Verifique se o Backend está rodando!");
+        } catch (error: any) {
+            console.error("Erro completo:", error);           
+            if (error.response && error.response.data && error.response.data.detail) {
+                 alert("O Backend recusou a transação: " + JSON.stringify(error.response.data.detail));
+            } else {
+                 alert("Erro de conexão. Verifique o console.");
+            }
         }
     }
 
