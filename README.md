@@ -1,6 +1,6 @@
 # 💰 Penny - Budget Tracker
 
-**[🟢 Acessar Aplicação Online](https://penny-budget-tracker.vercel.app/)**
+**[🟢 Acessar Aplicação Online](https://d2a8265yk391np.cloudfront.net/)**
 
 > "Cada centavo conta" - Um rastreador de finanças pessoais simples e intuitivo.
 
@@ -9,10 +9,12 @@
 ![Vite](https://img.shields.io/badge/Vite-7.3.1-646cff?style=flat&logo=vite)
 ![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=flat&logo=fastapi)
 ![Python](https://img.shields.io/badge/Python-3670A0?style=flat&logo=python&logoColor=ffdd54)
+![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=flat&logo=amazon-aws&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-%23316192.svg?style=flat&logo=postgresql&logoColor=white)
 
 ## 📖 Sobre o Projeto
 
-O **Penny** é meu primeiro projeto desenvolvido com React, agora evoluído para uma aplicação Full-Stack.
+O **Penny** é meu primeiro projeto desenvolvido com React, evoluído para uma aplicação Full-Stack com infraestrutura em nuvem.
 
 Um rastreador de orçamento pessoal que permite controlar receitas e despesas de forma visual e prática, com os dados sendo salvos em um banco de dados via API.
 
@@ -32,10 +34,21 @@ Um rastreador de orçamento pessoal que permite controlar receitas e despesas de
 - **CSS Modules** - Estilização com escopo local
 - **Vite** - Build tool
 - **FastAPI (Python)** - Backend (API REST)
+- **PostgreSQL** - Banco de dados relacional
 - **Axios** - Consumo de API
 
-## 🚀 Como Rodar o Backend (API)
+## ☁️ Infraestrutura AWS
 
+| Serviço | Uso |
+|---------|-----|
+| **EC2 (t2.micro)** | Hospedagem do backend FastAPI |
+| **RDS (PostgreSQL)** | Banco de dados gerenciado |
+| **S3** | Armazenamento do build React |
+| **CloudFront** | CDN + HTTPS para o frontend |
+
+## 🚀 Como Rodar Localmente
+
+### Backend (API)
 ```bash
 # Navegue até a pasta da API
 cd penny-api
@@ -45,21 +58,20 @@ pip install -r requirements.txt
 
 # Rode o servidor
 uvicorn app.main:app --reload
-
 A API rodará em: http://localhost:8000
-```
-## 🚀 Como Rodar o Frontend (React)
-```bash
+
+Frontend (React)
+Bash
 
 git clone https://github.com/AndreLopes30/penny-budget-tracker.git
 cd penny-budget-tracker
 npm install
 npm run dev
-```
 Acesse: http://localhost:5173
 
-## 📂 Estrutura (Frontend)
-```bash
+📂 Estrutura (Frontend)
+Bash
+
 src/
 ├── Components/
 │   ├── Header.tsx
@@ -68,9 +80,7 @@ src/
 ├── types.ts
 ├── App.tsx
 └── main.tsx
-```
 👤 Autor
-
 **André Ferreira**
 
 - [GitHub](https://github.com/AndreLopes30)
