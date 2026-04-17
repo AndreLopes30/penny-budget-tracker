@@ -82,6 +82,7 @@ src/
 └── main.tsx
 ```
 👤 Autor
+
 **André Ferreira**
 
 - [GitHub](https://github.com/AndreLopes30)
