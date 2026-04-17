@@ -60,7 +60,7 @@ pip install -r requirements.txt
 uvicorn app.main:app --reload
 A API rodará em: http://localhost:8000
 ```
-Frontend (React)
+### Frontend (React)
 ```bash
 git clone https://github.com/AndreLopes30/penny-budget-tracker.git
 cd penny-budget-tracker
@@ -69,7 +69,7 @@ npm run dev
 Acesse: http://localhost:5173
 ```
 
-📂 Estrutura (Frontend)
+### 📂 Estrutura (Frontend)
 ```bash
 src/
 ├── Components/
