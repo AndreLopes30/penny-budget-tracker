@@ -5,20 +5,25 @@
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-%23316192.svg?style=flat&logo=postgresql&logoColor=white)
 ![React](https://img.shields.io/badge/React-19.x-61dafb?style=flat&logo=react)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178c6?style=flat&logo=typescript)
-![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=flat&logo=amazon-aws&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
 
-Aplicação Full-Stack de controle financeiro pessoal com infraestrutura real na AWS — backend em FastAPI, banco gerenciado em RDS, frontend em S3 com CDN via CloudFront.
+> [Português](#) | [English version below](#-penny--budget-tracker--english)
 
-**[🟢 Acessar aplicação online](https://d2a8265yk391np.cloudfront.net/)**
+Aplicação Full-Stack de controle financeiro pessoal — backend em FastAPI, PostgreSQL, frontend React com TypeScript.
+
+**[🟢 Demo — Render](https://penny-budget-tracker.onrender.com)**  
+**[🟢 Demo — Vercel](https://penny-budget-tracker.vercel.app)**
 
 ---
 
-## 📌 Sobre o projeto
+## 📖 Sobre o projeto
 
-O Penny nasceu para praticar arquitetura Full-Stack em ambiente próximo ao de produção. O backend expõe uma API REST com FastAPI e persiste os dados em PostgreSQL gerenciado pelo Amazon RDS. O frontend React consome a API via Axios, é hospedado em S3 e distribuído globalmente com CloudFront e HTTPS via ACM.
+O Penny é uma aplicação Full-Stack de controle financeiro pessoal desenvolvida para consolidar experiência prática com arquitetura de APIs REST, banco de dados relacional e deploy em nuvem.
 
-A infraestrutura foi provisionada e configurada manualmente via SSH, IAM e Security Groups — sem serviços gerenciados de deploy — para consolidar experiência real com AWS.
+O projeto passou por duas fases de infraestrutura:
+
+**Fase 1 — AWS (educacional, desativada):** o ambiente foi provisionado manualmente na AWS com EC2, RDS (PostgreSQL), S3, CloudFront, ACM, IAM e Security Groups — com o objetivo de aprender como funciona uma infraestrutura de produção real. Essa fase foi desativada por questão de custos.
+
+**Fase 2 — Render + Vercel (atual):** backend hospedado no Render, frontend no Vercel. Deploy simples, gratuito e acessível para demonstração.
 
 ---
 
@@ -30,7 +35,7 @@ A infraestrutura foi provisionada e configurada manualmente via SSH, IAM e Secur
 - Histórico completo de movimentações
 - Interface responsiva para mobile e desktop
 - Formatação automática em Real (R$)
-- Documentação interativa da API via Swagger/OpenAPI (`/docs`)
+- Documentação interativa via Swagger/OpenAPI (`/docs`)
 
 ---
 
@@ -39,15 +44,16 @@ A infraestrutura foi provisionada e configurada manualmente via SSH, IAM e Secur
 | Camada | Tecnologias |
 |--------|------------|
 | **Backend** | Python, FastAPI, SQLAlchemy, Pydantic, Uvicorn |
-| **Banco de dados** | PostgreSQL (Amazon RDS) |
+| **Banco de dados** | PostgreSQL |
 | **Frontend** | React 19, TypeScript, Vite, Axios, CSS Modules |
-| **Infra / Cloud** | AWS EC2, RDS, S3, CloudFront, ACM, IAM, Security Groups |
-| **Servidor** | Nginx (proxy reverso) |
+| **Deploy atual** | Render (backend) + Vercel (frontend) |
 | **Versionamento** | Git / GitHub |
 
 ---
 
-## ☁️ Infraestrutura AWS
+## ☁️ Infraestrutura AWS (fase educacional — desativada)
+
+Durante o desenvolvimento, o projeto foi hospedado integralmente na AWS para fins de aprendizado. O ambiente foi desativado por questão de custos, mas a experiência de provisionamento manual foi o principal aprendizado de cloud deste projeto.
 
 ```
                     ┌─────────────────────────────┐
@@ -68,12 +74,12 @@ A infraestrutura foi provisionada e configurada manualmente via SSH, IAM e Secur
 
 | Serviço AWS | Uso |
 |-------------|-----|
-| **EC2 (t2.micro)** | Hospedagem do backend FastAPI + Nginx |
-| **RDS (PostgreSQL)** | Banco de dados relacional gerenciado |
-| **S3** | Armazenamento e serving do build React |
+| **EC2 (t2.micro)** | Backend FastAPI + Nginx |
+| **RDS (PostgreSQL)** | Banco de dados gerenciado |
+| **S3** | Hosting do build React |
 | **CloudFront** | CDN global + HTTPS |
 | **ACM** | Certificado SSL/TLS |
-| **IAM + Security Groups** | Gerenciamento de permissões e acesso de rede |
+| **IAM + Security Groups** | Permissões e controle de acesso de rede |
 
 ---
 
@@ -84,28 +90,28 @@ penny/
 ├── app/                        # Backend (FastAPI)
 │   ├── api/
 │   │   ├── endpoints/
-│   │   │   └── transactions.py # Rotas de transações
-│   │   └── api.py              # Registro de routers
+│   │   │   └── transactions.py
+│   │   └── api.py
 │   ├── db/
-│   │   ├── base_class.py       # Base declarativa SQLAlchemy
-│   │   └── db.py               # Sessão e engine do banco
+│   │   ├── base_class.py
+│   │   └── db.py
 │   ├── models/
-│   │   └── transaction.py      # Modelo ORM de transação
+│   │   └── transaction.py
 │   ├── schemas/
-│   │   └── transaction.py      # Schemas Pydantic (request/response)
-│   └── main.py                 # Entry point FastAPI + CORS
+│   │   └── transaction.py
+│   └── main.py
 │
 ├── src/                        # Frontend (React + TypeScript)
 │   ├── Components/
-│   │   ├── Forms.tsx           # Formulário de nova transação
-│   │   ├── Header.tsx          # Cabeçalho com saldo
-│   │   └── List.tsx            # Lista de transações
+│   │   ├── Forms.tsx
+│   │   ├── Header.tsx
+│   │   └── List.tsx
 │   ├── App.tsx
-│   ├── types.ts                # Tipagem TypeScript
+│   ├── types.ts
 │   └── main.tsx
 │
-├── requirements.txt            # Dependências Python
-├── package.json                # Dependências Node
+├── requirements.txt
+├── package.json
 └── vite.config.ts
 ```
 
@@ -119,52 +125,38 @@ penny/
 | `POST` | `/transactions/` | Criar nova transação |
 | `DELETE` | `/transactions/{id}` | Deletar transação por ID |
 
-> Documentação interativa disponível em `/docs` (Swagger UI) e `/redoc`.
+> Documentação interativa em `/docs` (Swagger UI) e `/redoc`.
 
 ---
 
 ## ⚙️ Como rodar localmente
 
-### Pré-requisitos
-
-- Python 3.10+
-- Node.js 18+
-- PostgreSQL rodando localmente (ou ajustar `DATABASE_URL` para SQLite)
-
 ### Backend
 
 ```bash
-# Clone o repositório
 git clone https://github.com/AndreLopes30/penny-budget-tracker.git
 cd penny-budget-tracker
 
-# Crie e ative o ambiente virtual
 python -m venv venv
 source venv/bin/activate  # Linux/macOS
 venv\Scripts\activate     # Windows
 
-# Instale as dependências
 pip install -r requirements.txt
 ```
 
-Crie o arquivo `.env` na raiz com:
+Crie o arquivo `.env`:
 
 ```env
 DATABASE_URL=postgresql://usuario:senha@localhost:5432/penny
 ```
 
-> Para desenvolvimento rápido, substitua por `sqlite:///./penny.db` sem precisar de PostgreSQL local.
-
-Inicie o backend:
+> Para desenvolvimento rápido sem PostgreSQL local, use `sqlite:///./penny.db`.
 
 ```bash
 uvicorn app.main:app --reload
 ```
 
-API disponível em: `http://localhost:8000`
-Swagger em: `http://localhost:8000/docs`
-
----
+API em: `http://localhost:8000` | Swagger: `http://localhost:8000/docs`
 
 ### Frontend
 
@@ -173,9 +165,7 @@ npm install
 npm run dev
 ```
 
-Frontend disponível em: `http://localhost:5173`
-
-> Por padrão o frontend aponta para a API em produção (EC2). Para apontar para o backend local, edite a variável de base URL no `App.tsx` ou crie um `.env` de desenvolvimento.
+Frontend em: `http://localhost:5173`
 
 ---
 
@@ -189,13 +179,13 @@ Frontend disponível em: `http://localhost:5173`
 
 ## 🧭 Decisões técnicas
 
-**Por que FastAPI?** Performance superior ao Flask para APIs REST, tipagem nativa com Pydantic, geração automática de documentação OpenAPI e suporte a async — alinhado com o mercado atual de backend Python.
+**FastAPI:** performance superior ao Flask para APIs REST, tipagem nativa com Pydantic e geração automática de documentação OpenAPI.
 
-**Por que PostgreSQL no RDS?** Banco relacional gerenciado elimina overhead de configuração de backup, failover e updates — padrão em ambientes de produção.
+**PostgreSQL:** banco relacional com suporte a queries complexas, constraints e integridade referencial — escolha natural para dados financeiros.
 
-**Por que CloudFront na frente do S3?** Redução de latência global, HTTPS nativo via ACM e possibilidade de regras de cache sem necessidade de servidor dedicado para o frontend.
+**AWS (fase educacional):** EC2, RDS, S3, CloudFront, ACM, IAM e Security Groups foram provisionados manualmente para simular um ambiente real de produção e aprender como cada camada da infraestrutura funciona. Ambiente desativado por questão de custos.
 
-**Por que Nginx no EC2?** Proxy reverso entre a internet e o Uvicorn, gerenciamento de CORS no nível de servidor e controle de conexões simultâneas.
+**Render + Vercel (fase atual):** deploy gratuito e acessível para manter a aplicação disponível para demonstração.
 
 ---
 
@@ -203,8 +193,8 @@ Frontend disponível em: `http://localhost:5173`
 
 - Autenticação com JWT (isolamento de dados por usuário)
 - Paginação e filtros por categoria e período
-- Gráficos de evolução de saldo ao longo do tempo
-- Pipeline CI/CD com GitHub Actions para deploy automático no EC2
+- Gráficos de evolução de saldo
+- Pipeline CI/CD com GitHub Actions
 
 ---
 
@@ -216,5 +206,107 @@ Frontend disponível em: `http://localhost:5173`
 ---
 
 ## 📄 Licença
+
+MIT
+
+---
+
+---
+
+# 💰 Penny — Budget Tracker — English
+
+Full-Stack personal finance tracker — FastAPI backend, PostgreSQL, React + TypeScript frontend.
+
+**[🟢 Live — Render](https://penny-budget-tracker.onrender.com)**  
+**[🟢 Live — Vercel](https://penny-budget-tracker.vercel.app)**
+
+---
+
+## 📖 About
+
+Penny is a Full-Stack personal finance application built to consolidate hands-on experience with REST API architecture, relational databases, and cloud deployment.
+
+The project went through two infrastructure phases:
+
+**Phase 1 — AWS (educational, deactivated):** the environment was manually provisioned on AWS using EC2, RDS (PostgreSQL), S3, CloudFront, ACM, IAM, and Security Groups — to learn how a real production infrastructure works. Deactivated due to cost.
+
+**Phase 2 — Render + Vercel (current):** backend on Render, frontend on Vercel. Simple, free, and accessible for demonstration.
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technologies |
+|-------|-------------|
+| **Backend** | Python, FastAPI, SQLAlchemy, Pydantic, Uvicorn |
+| **Database** | PostgreSQL |
+| **Frontend** | React 19, TypeScript, Vite, Axios, CSS Modules |
+| **Current deploy** | Render (backend) + Vercel (frontend) |
+
+---
+
+## ☁️ AWS Infrastructure (educational phase — deactivated)
+
+| AWS Service | Usage |
+|-------------|-------|
+| **EC2 (t2.micro)** | FastAPI backend + Nginx |
+| **RDS (PostgreSQL)** | Managed relational database |
+| **S3** | React build hosting |
+| **CloudFront** | Global CDN + HTTPS |
+| **ACM** | SSL/TLS certificate |
+| **IAM + Security Groups** | Permissions and network access control |
+
+Manually provisioned to simulate a real production environment. Deactivated due to cost — migrated to Render + Vercel for free hosting.
+
+---
+
+## 🚀 API Endpoints
+
+| Method | Route | Description |
+|--------|-------|-------------|
+| `GET` | `/transactions/` | List all transactions |
+| `POST` | `/transactions/` | Create a new transaction |
+| `DELETE` | `/transactions/{id}` | Delete a transaction by ID |
+
+---
+
+## ⚙️ Running locally
+
+```bash
+git clone https://github.com/AndreLopes30/penny-budget-tracker.git
+cd penny-budget-tracker
+
+python -m venv venv
+source venv/bin/activate
+
+pip install -r requirements.txt
+```
+
+Create a `.env` file:
+
+```env
+DATABASE_URL=postgresql://user:password@localhost:5432/penny
+```
+
+> For quick local dev, use `sqlite:///./penny.db`.
+
+```bash
+uvicorn app.main:app --reload
+# API at http://localhost:8000/docs
+
+npm install && npm run dev
+# Frontend at http://localhost:5173
+```
+
+---
+
+## 👤 Author
+
+**André Ferreira**
+[GitHub](https://github.com/AndreLopes30) · [LinkedIn](https://www.linkedin.com/in/andre-ferreira30)
+
+---
+
+## 📄 License
 
 MIT
